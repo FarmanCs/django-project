@@ -1,0 +1,20 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/dist/app.js' %}"></script>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <nav>
+      tHIS IS OUR NAMVE BAR
+    </nav>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
