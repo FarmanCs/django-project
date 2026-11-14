@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
-from .models import User
+from .models import UserProfile, UserReview, StudentSubject, StudentCertificate
 
 
 # Create your views here.
 def userindex(request):
-    users = User.objects.all()
+    users = UserProfile.objects.all()
     return render(request, "user.html", {"users": users})
