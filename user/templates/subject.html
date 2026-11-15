@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}
+  Student Subjects
+{% endblock %}
+{% block content %}
+  <h1>Find Student Subjects</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Find Subjects</button>
+  </form>
+  <hr>
+  <h2>Student Subjects</h2>
+  {% for item in subject %}
+    <div>
+      <h3>{{ item.subject_name }}</h3>
+      <p>Code: {{ item.subject_code }}</p>
+      <p>Instructor: {{ item.subject_instructor }}</p>
+      <p>Credits: {{ item.subject_credits }}</p>
+    </div>
+  {% empty %}
+    <p>No subjects found.</p>
+  {% endfor %}
+{% endblock %}
